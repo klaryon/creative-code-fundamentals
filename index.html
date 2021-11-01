@@ -20,7 +20,7 @@
         context.fillStyle = 'blue';
 
         // fillRect is a function that takes 4 parameters: x, y, width, height
-        context.fillRect(100, 100, 400, 400);
+        // context.fillRect(100, 100, 400, 400);
         
         //specifies line width
         context.lineWidth = 4;
@@ -28,12 +28,24 @@
         // creates oultine of a rectangle
         context.beginPath();
         context.rect(100, 100, 400, 400);
-        context.stroke();
+        // context.stroke();
         
         // creates oultine of a circle, specify angles in radians (not in degrees)
         context.beginPath();
         context.arc(300, 300, 100, 0, Math.PI * 2);
-        context.stroke();
+        // context.stroke();
+
+        for (let i = 0; i < 5; i++) {
+            let width = 60;
+            let height = 60;
+            let gap = 20;
+            let x = 100 + (width + gap) * i;
+            let y = 100;
+
+            context.beginPath();
+            context.rect(x, y, width, height);
+            context.stroke();
+        }
     </script>
 </body>
 </html>
