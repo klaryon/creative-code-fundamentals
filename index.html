@@ -1,59 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Creative coding fundamentals</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- canvas element is used to draw graphics on a web page -->
     <canvas width="600" height="600"></canvas>
 
     <script>
-        let canvas = document.querySelector('canvas');
+      let canvas = document.querySelector("canvas");
 
-        // The context is where we actually do the drawing: can be 2d or 3d
-        let context = canvas.getContext('2d');
+      // The context is where we actually do the drawing: can be 2d or 3d
+      let context = canvas.getContext("2d");
 
-        // fillStyle: styles
-        context.fillStyle = 'blue';
+      // fillStyle: styles
+      context.fillStyle = "blue";
 
-        // fillRect is a function that takes 4 parameters: x, y, width, height
-        // context.fillRect(100, 100, 400, 400);
-        
-        //specifies line width
-        context.lineWidth = 4;
+      // fillRect is a function that takes 4 parameters: x, y, width, height
+      // context.fillRect(100, 100, 400, 400);
 
-        // creates oultine of a rectangle
-        context.beginPath();
-        context.rect(100, 100, 400, 400);
-        // context.stroke();
-        
-        // creates oultine of a circle, specify angles in radians (not in degrees)
-        context.beginPath();
-        context.arc(300, 300, 100, 0, Math.PI * 2);
-        // context.stroke();
+      //specifies line width
+      context.lineWidth = 4;
 
-        for (let i = 0; i < 5; i++) {
-            for (let j = 0; j < 5; j++) {
-                let width = 60;
-                let height = 60;
-                let gap = 20;
-                let x = 100 + (width + gap) * i;
-                let y = 100 + (height + gap) * j;
-    
-                context.beginPath();
-                context.rect(x, y, width, height);
-                context.stroke();
-                
-                if (Math.random() > 0.5) {
-                    context.beginPath();
-                    context.rect(x + 8, y + 8, width - 16, height - 16);
-                    context.stroke();
-                }
-            }
+      // creates oultine of a rectangle
+      context.beginPath();
+      context.rect(100, 100, 400, 400);
+      // context.stroke();
+
+      // creates oultine of a circle, specify angles in radians (not in degrees)
+      context.beginPath();
+      context.arc(300, 300, 100, 0, Math.PI * 2);
+      // context.stroke();
+
+      const width = 60;
+      const height = 60;
+      const gap = 20;
+      let x, y;
+
+      for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
+          x = 100 + (width + gap) * i;
+          y = 100 + (height + gap) * j;
+
+          context.beginPath();
+          context.rect(x, y, width, height);
+          context.stroke();
+
+          if (Math.random() > 0.5) {
+            context.beginPath();
+            context.rect(x + 8, y + 8, width - 16, height - 16);
+            context.stroke();
+          }
         }
+      }
     </script>
-</body>
+  </body>
 </html>
