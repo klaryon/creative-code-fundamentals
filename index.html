@@ -7,11 +7,19 @@
     <title>Creative coding fundamentals</title>
 </head>
 <body>
+    <!-- canvas element is used to draw graphics on a web page -->
     <canvas width="600" height="600"></canvas>
+
     <script>
         let canvas = document.querySelector('canvas');
+
+        // The context is where we actually do the drawing: can be 2d or 3d
         let context = canvas.getContext('2d');
 
+        // fillStyle: styles
+        context.fillStyle = 'blue';
+
+        // fillRect is a function that takes 4 parameters: x, y, width, height
         context.fillRect(100, 100, 400, 400);
     </script>
 </body>
